@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "move.h": "c",
+        "image.h": "c"
+    }
+}

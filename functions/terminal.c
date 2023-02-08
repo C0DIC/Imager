@@ -11,6 +11,7 @@ const char *terminal_help_text =
     "\n\n"
     "      options  := {\n"
     "           --copy [copy_name (with extension) | full/path/where/to/save]\n"
+    "           --move [new_name (with extension) | full/path/where/to/save]\n"
           "}\n";
 
 void terminal(int argc, const char *argv[], void *(interpreter)(int size, const char **buffer)) {
