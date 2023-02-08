@@ -2,7 +2,6 @@
 #include "../functions/copy.h"
 #include "../functions/terminal.h"
 #include "../functions/interpreter.h"
-#include <string.h>
 #include <stdio.h>
 
 int main(int argc, const char *argv[]) {
