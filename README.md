@@ -1,4 +1,4 @@
-# Imager
+#Imager
 
 Simple and fast command-line image manipulator written in C
 
@@ -13,7 +13,7 @@ Options:
 - --copy
 - in progress
 
-## Examples
+##Examples
 
 Only name (will save in the same directory, where program used):  
 `./imager image.jpg --copy copy_image.jpg`
@@ -24,6 +24,6 @@ Relative path:
 Full path to the file:  
 `./imager image.jpg --copy /home/username/copy_image.jpg`
 
-## Compiling
+##Compiling
 
 `gcc image/image.c functions/copy.c functions/terminal.c functions/interpreter.c tests/test.c -o imager`
