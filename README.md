@@ -1,2 +1,29 @@
 # Imager
-Simple and fast command-line image manager written in C
+
+Simple and fast command-line image manipulator written in C
+
+## Usage
+
+Usage: [filename] [option]
+
+Filename: image-file name (with extension) or full (or relative) path to file
+
+Options:
+
+- --copy
+- in progress
+
+## Examples
+
+Only name (will save in the same directory, where program used):  
+`./imager image.jpg --copy copy_image.jpg`
+
+Relative path:
+`./imager image.jpg --copy ~/copy_image.jpg`
+
+Full path to the file:
+`./imager image.jpg --copy /home/username/copy_image.jpg`
+
+## Compiling
+
+`gcc image/image.c functions/copy.c functions/terminal.c functions/interpreter.c tests/test.c -o imager`
