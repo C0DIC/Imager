@@ -11,7 +11,8 @@ Filename: image-file name (with extension) or full (or relative) path to file
 Options:
 
 - --copy
-- in progress
+- --move
+- in progress...
 
 ## Examples
 
