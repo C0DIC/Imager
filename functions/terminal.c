@@ -1,17 +1,30 @@
+//
+//
+//  LOCAL CHANGELOG:
+//
+//  09/02/2023:
+//      Changed the help message
+//
+//
+//
+
 #include <stdio.h>
 #include <string.h>
 #include "terminal.h"
 #include "../image/image.h"
 
 const char *terminal_help_text = 
-    "Usage: [filename] [option]\n"
+    "Usage: [filename] [options]\n"
     "where\n"
     "      filename := name of the image-file to manipulate (with extension),\n"
     "                  full path to file"
     "\n\n"
     "      options  := {\n"
-    "           --copy [copy_name (with extension) | full/path/where/to/save]\n"
-    "           --move [new_name (with extension) | full/path/where/to/save]\n"
+    "           --copy : Copy image file\n"
+    "                    [copy_name (with extension) | full/path/where/to/save]\n\n"
+    "           --move : Move/rename image file\n"
+    "                    [new_name (with extension) | full/path/where/to/save]\n\n"
+    "           --info : Shows information about image file\n"
           "}\n";
 
 void terminal(int argc, const char *argv[], void *(interpreter)(int size, const char **buffer)) {

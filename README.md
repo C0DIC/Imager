@@ -4,7 +4,7 @@ Simple and fast command-line image manipulator written in C
 
 ## Usage
 
-Usage: [filename] [option]
+Usage: [filename] [options]
 
 Filename: image-file name (with extension) or full (or relative) path to file
 
@@ -12,6 +12,7 @@ Options:
 
 - --copy
 - --move
+- --info
 - in progress...
 
 ## Examples

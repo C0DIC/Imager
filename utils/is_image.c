@@ -1,6 +1,16 @@
+//
+//
+//  LOCAL CHANGELOG:
+//
+//  09/02/2023:
+//      Changed the return value to the image-type value
+//      Removed non-needed includings
+//
+//
+//
+//
+
 #include "is_image.h"
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 int is_imageFile(const char* filename) {
@@ -33,7 +43,7 @@ int is_imageFile(const char* filename) {
     i = 0;
     for (; i < 4; i++) {
         if (!strcmp(extension, extensions[i])) {
-            return 1;
+            return i + 1;
         }
     }
 
