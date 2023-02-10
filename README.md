@@ -28,4 +28,4 @@ Full path to the file:
 
 ## Compiling
 
-`gcc image/image.c functions/copy.c functions/terminal.c functions/move.c functions/interpreter.c utils/is_image.c tests/test.c -o imager`
+`gcc image/image.c functions/copy.c functions/terminal.c functions/move.c functions/info.c functions/interpreter.c utils/is_image.c utils/correct_name.c tests/test.c -o imager`
