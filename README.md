@@ -8,7 +8,7 @@ Simple and fast command-line image manipulator written in C
 imager filename [options]
 
 Argument:
-    Any image file          (*.png, *.jpeg, *.jpg supported)
+    Your image file          (PNG, JPEG/JPG (JFIF) supported)
 
 Options:
     --help                  Shows help message

@@ -75,16 +75,17 @@ void getPngRes(image *imageFile, unsigned int *imageWidth, unsigned int *imageHe
 void getJpegRes(image *imageFile, unsigned int *imageWidth, unsigned int *imageHeight) {
     for (int i = 155; i < 180; i++) {
         if (imageFile->data[i] == '"') {
-            *imageHeight = (imageFile->data[i-6] << 8) + imageFile->data[i-5];
-            *imageWidth = (imageFile->data[i-4] << 8) + imageFile->data[i-3];
+            *imageHeight += (imageFile->data[i-6] << 8) + imageFile->data[i-5];
+            *imageWidth += (imageFile->data[i-4] << 8) + imageFile->data[i-3];
         }
     }
-}
+}   
 
 void setImageResolution(image *imageFile) {
     switch (imageFile->extension_type) {
-        case JPEG: case JPG: { getJpegRes(imageFile, &imageFile->width, &imageFile->height); break; }
-        case PNG: { getPngRes(imageFile, &imageFile->width, &imageFile->height); break; }
+        case JPEG: { getJpegRes(imageFile, &imageFile->width, &imageFile->height); break; }
+        case JPG:  { getJpegRes(imageFile, &imageFile->width, &imageFile->height); break; }
+        case PNG:  { getPngRes(imageFile, &imageFile->width, &imageFile->height); break; }
     
         default: break;
     }
@@ -107,6 +108,8 @@ image createImage(const char *filename) {
 
     new_image.filename = filename;
     new_image.source = image_file;
+    new_image.width = 0;
+    new_image.height = 0;
     setImageSize(&new_image);
     setImageData(&new_image);
     setImageExtension(&new_image);
