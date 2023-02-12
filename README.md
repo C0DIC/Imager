@@ -4,16 +4,19 @@ Simple and fast command-line image manipulator written in C
 
 ## Usage
 
-Usage: [filename] [options]
+``` text
+imager filename [options]
 
-Filename: image-file name (with extension) or full (or relative) path to file
+Argument:
+    Any image file          (*.png, *.jpeg, *.jpg supported)
 
 Options:
+    --help                  Shows help message
 
-- --copy
-- --move
-- --info
-- in progress...
+    --copy                  Copy image
+    --move                  Move image
+    --info                  Shows information about image
+```
 
 ## Examples
 
