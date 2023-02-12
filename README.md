@@ -31,4 +31,6 @@ Full path to the file:
 
 ## Compiling
 
-```gcc functions/*.c utils/*.c image/*.c tests/*.c -o imager```
+``` text
+gcc functions/*.c utils/*.c image/*.c tests/*.c -o imager
+```
