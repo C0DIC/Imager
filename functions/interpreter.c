@@ -7,6 +7,10 @@
 //      Added "info.h"
 //      Added "../utils/correct_name.h"
 //
+//  12/02/2023:
+//      Added alternatives for options --move, --info, --copy
+//
+//
 //
 
 #include "../utils/correct_name.h"
@@ -30,7 +34,7 @@ void *interpreter(int size, const char **buffer) {
     image imageFile = createImage(buffer[1]);
 
     for (; i < size; i++) {
-        if (!strcmp(buffer[i], "--copy")) {
+        if (!strcmp(buffer[i], "--copy") || !strcmp(buffer[i], "-cp")) {
             if ((i+1) >= size) {
                 char new_copy_name[256] = "copy_";
                 strcat(new_copy_name, imageFile.filename);
@@ -46,7 +50,7 @@ void *interpreter(int size, const char **buffer) {
             }
         }
 
-        if (!strcmp(buffer[i], "--move")) {            
+        if (!strcmp(buffer[i], "--move") || !strcmp(buffer[i], "-mv")) {            
             if ((i+1) >= size) {
                 fprintf(stderr, "Maybe you missed an argument\n");
                 break;
@@ -60,7 +64,7 @@ void *interpreter(int size, const char **buffer) {
             }
         }
 
-        if (!strcmp(buffer[i], "--info")) {
+        if (!strcmp(buffer[i], "--info") || !strcmp(buffer[i], "-i")) {
             infoImage(&imageFile);
         }
     }

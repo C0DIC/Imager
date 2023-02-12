@@ -8,10 +8,8 @@
 //      Added getPngRes(), getJpegRes() methods
 //      Changed createImage() method
 //
-//
-//
-//
-//
+//  12/02/2023:
+//      Fixed getJpegRes() method
 //
 
 
@@ -49,8 +47,7 @@ void setImageData(image *imageFile) {
 void setImageExtension(image *imageFile) {
 
     switch (is_imageFile(imageFile->filename)) {
-        case JPEG: { imageFile->extension_type = JPEG; imageFile->extension = ".jpeg"; break; }
-        case JPG:  { imageFile->extension_type = JPG; imageFile->extension = ".jpg"; break; }
+        case JPEG: case JPG: { imageFile->extension_type = JPEG; imageFile->extension = ".jpeg"; break; }
         case PNG:  { imageFile->extension_type = PNG; imageFile->extension = ".png"; break; }
         case GIF:  { imageFile->extension_type = GIF; imageFile->extension = ".gif"; break; }
 
@@ -73,10 +70,11 @@ void getPngRes(image *imageFile, unsigned int *imageWidth, unsigned int *imageHe
 }
 
 void getJpegRes(image *imageFile, unsigned int *imageWidth, unsigned int *imageHeight) {
-    for (int i = 155; i < 180; i++) {
+    for (int i = 135; i < 1000; i++) {
         if (imageFile->data[i] == '"') {
-            *imageHeight += (imageFile->data[i-6] << 8) + imageFile->data[i-5];
-            *imageWidth += (imageFile->data[i-4] << 8) + imageFile->data[i-3];
+            *imageHeight = (imageFile->data[i-6] << 8) + imageFile->data[i-5];
+            *imageWidth = (imageFile->data[i-4] << 8) + imageFile->data[i-3];
+            break;
         }
     }
 }   
