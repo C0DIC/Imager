@@ -29,8 +29,19 @@ Relative path:
 Full path to the file:  
 `./imager image.jpg --copy /home/username/copy_image.jpg`
 
-## Compiling
+## Building  
+
+Clone this repo
 
 ``` text
-gcc functions/*.c utils/*.c image/*.c tests/*.c -o imager
+cd Imager
+chmod +x build.sh
+./build.sh
+```
+
+## Uninstall  
+
+``` text
+chmox +x uninstall.sh
+./uninstall.sh
 ```
