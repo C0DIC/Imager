@@ -31,9 +31,8 @@ Full path to the file:
 
 ## Building  
 
-Clone this repo
-
 ``` text
+git clone https://github.com/C0DIC/Imager.git
 cd Imager
 chmod +x build.sh
 ./build.sh
