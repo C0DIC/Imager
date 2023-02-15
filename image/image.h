@@ -10,6 +10,8 @@
 //      Added extension_type, extension, width, height to Image structre
 //      Changed including files
 //
+// 15/02/2023:
+//		Removed non-nedeed code lines
 //
 
 #ifndef IMAGE_H
@@ -30,16 +32,6 @@ typedef struct Image {
 
     unsigned int width;
     unsigned int height;
-
-    // Отключены за ненадобностью
-    // Get the name of the image file
-    // const char    *(*getName)(struct Image *imageFile);
-
-    // Get the size of the image file
-    // unsigned long (*getSize)(struct Image *imageFile);
-
-    // Get the data of the image file
-    //unsigned char *(*getData)(struct Image *imageFile);
 } image;
 
 // Creates an Image-type variable

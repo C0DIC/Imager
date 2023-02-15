@@ -11,6 +11,9 @@
 //  12/02/2023:
 //      Fixed getJpegRes() method
 //
+//	15/02/2023:
+//		Remove non-needed comments
+//
 
 
 
@@ -93,15 +96,11 @@ image createImage(const char *filename) {
     FILE *image_file = fopen(filename, "rb");
 
     if (!image_file) {
-        // Всегда ли он должен писать, что такого файла нет?
-        // Или могут быть другие ошибки, в случае чего нужно выводить
-        // закомментированную фразу
-        
-        // fprintf(stderr, "Unable to open file %s\n", filename);
         fprintf(stderr, "There's no file named %s\n", filename);
         free(image_file);
         exit(1);
     }
+    
     image new_image;
 
     new_image.filename = filename;
