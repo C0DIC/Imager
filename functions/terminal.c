@@ -39,8 +39,6 @@ void terminal(int argc, const char *argv[], void *(interpreter)(int size, const 
             if(!strcmp(argv[1], "--help") || !strcmp(argv[1], "-?") || !strcmp(argv[1], "-h")) {
                 printf("%s", terminal_help_text);
             } else {
-                // Если аргумент не --help, а аргументов всего 2
-                // (запуск + 2ой аргумент(что угодно, кроме --help, даже название файла))
                 printf("Use «./imager --help» to see the help message\n");
             }
             break;
