@@ -31,6 +31,15 @@ Relative path:
 Full path to the file:  
 `imager image.jpg --copy /home/username/copy_image.jpg`
 
+## Goals
+
+- Read image files :heavy_check_mark:
+- Command-line user interface :heavy_check_mark:
+- Copy :heavy_check_mark:
+- Move/Rename :heavy_check_mark:
+- Resize :x:
+- Crop  :x:
+
 ## Building  
 
 ``` text
