@@ -1,5 +1,7 @@
 # Imager
 
+![Imager logo](/misc/imager_poster.png)
+
 Simple and fast command-line image manipulator written in C
 
 ## Usage
