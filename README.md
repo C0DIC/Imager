@@ -37,6 +37,7 @@ Full path to the file:
 - Command-line user interface :heavy_check_mark:
 - Copy :heavy_check_mark:
 - Move/Rename :heavy_check_mark:
+- Properties (info) :heavy_check_mark:
 - Resize :x:
 - Crop  :x:
 
