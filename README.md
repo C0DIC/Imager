@@ -21,13 +21,13 @@ Options:
 ## Examples
 
 Only name (will save in the same directory, where program used):  
-`./imager image.jpg --copy copy_image.jpg`
+`imager image.jpg --copy copy_image.jpg`
 
 Relative path:  
-`./imager image.jpg --copy ~/copy_image.jpg`
+`imager image.jpg -cp ~/copy_image.jpg`
 
 Full path to the file:  
-`./imager image.jpg --copy /home/username/copy_image.jpg`
+`imager image.jpg --copy /home/username/copy_image.jpg`
 
 ## Building  
 
