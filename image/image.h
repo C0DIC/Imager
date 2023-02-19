@@ -28,6 +28,7 @@ typedef struct Image {
     unsigned short extension_type;
     const char *extension;
     unsigned char *data;
+    unsigned char *u_data;
     unsigned long size;
 
     unsigned int width;
