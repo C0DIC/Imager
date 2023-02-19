@@ -52,5 +52,5 @@ make
 ## Uninstall  
 
 ``` text
-make uninstall
+make clean
 ```
