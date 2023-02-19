@@ -9,11 +9,13 @@
 //
 //
 
+#include "../image/image.h"
 #include "../functions/terminal.h"
 #include "../functions/interpreter.h"
+#include "../functions/info.h"
 
 int main(int argc, const char *argv[]) {
-    terminal(argc, argv, interpreter);
+    image test_image = createImage(argv[1]);
 
     return 0;
 }
