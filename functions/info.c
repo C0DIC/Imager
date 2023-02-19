@@ -1,6 +1,7 @@
 #include "info.h"
 
 void infoImage(image *imageFile) {
+
     printf (
         "Image name:     %s\n"
         "Extension:      %s\n"

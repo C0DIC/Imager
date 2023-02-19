@@ -3,7 +3,9 @@ CC=gcc
 all: imager
 
 imager: utils.o functions.o image.o main.o
-	$(CC) *.o -o ~/.local/bin/imager
+	$(CC) *.o -o ~/.local/bin/imager -lm
+	mkdir build
+	mv *.o build
 
 utils.o:
 	$(CC) -c utils/*.c
@@ -18,7 +20,4 @@ main.o:
 	$(CC) -c main.c
 
 clean:
-	rm -rf *.o
-
-uninstall:
-	rm -rf ~/.local/bin/imager
+	rm -rf *.o build ~/.local/bin/imager

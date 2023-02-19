@@ -9,8 +9,8 @@
 //
 //  12/02/2023:
 //      Added alternatives for options --move, --info, --copy
-//
-//
+//  19/02/2023:
+//      Added resize.h | resizeImage() func
 //
 
 #include "../utils/correct_name.h"
@@ -24,6 +24,7 @@
 #include "copy.h"
 #include "move.h"
 #include "info.h"
+#include "resize.h"
 
 const char *not_image_text = 
 "Maybe, you forgot file extension or the file is argument is not correct\n";
@@ -66,6 +67,22 @@ void *interpreter(int size, const char **buffer) {
 
         if (!strcmp(buffer[i], "--info") || !strcmp(buffer[i], "-i")) {
             infoImage(&imageFile);
+        }
+
+        if (!strcmp(buffer[i], "--resize") || !strcmp(buffer[i], "-rs"))
+        {
+            if ((i+1) >= size) {
+                fprintf(stderr, "Maybe you missed new size argument\n");
+                break;
+            }
+
+            if (!atoi(buffer[i+1]))
+            {
+                fprintf(stderr, "That's not a number!\n");
+                break;
+            }
+
+            resizeImage(&imageFile, atof(buffer[i+1]));
         }
     }
 
