@@ -46,13 +46,11 @@ Full path to the file:
 ``` text
 git clone https://github.com/C0DIC/Imager.git
 cd Imager
-chmod +x build.sh
-./build.sh
+make
 ```
 
 ## Uninstall  
 
 ``` text
-chmox +x uninstall.sh
-./uninstall.sh
+make uninstall
 ```
