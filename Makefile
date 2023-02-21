@@ -3,7 +3,7 @@ CC=gcc
 all: imager
 
 imager: utils.o functions.o image.o main.o
-	$(CC) *.o -o ~/.local/bin/imager -lm
+	$(CC) *.o -o ~/.local/bin/imager -lpng
 	mkdir build
 	mv *.o build
 

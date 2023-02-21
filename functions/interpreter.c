@@ -24,7 +24,7 @@
 #include "copy.h"
 #include "move.h"
 #include "info.h"
-#include "resize.h"
+#include "crop.h"
 
 const char *not_image_text = 
 "Maybe, you forgot file extension or the file is argument is not correct\n";
@@ -69,7 +69,39 @@ void *interpreter(int size, const char **buffer) {
             infoImage(&imageFile);
         }
 
-        if (!strcmp(buffer[i], "--resize") || !strcmp(buffer[i], "-rs"))
+        if (!strcmp(buffer[i], "--crop") || !strcmp(buffer[i], "-cr"))
+        {
+            if ((i+2) >= size) {
+                fprintf(stderr, "Maybe you missed new size argument\n");
+                break;
+            }
+
+            if (!atoi(buffer[i+1]))
+            {
+                if(!strcmp(buffer[i+1], "0")) 
+                {
+                    fprintf(stderr, "You can't use 0 as an argument!\n");
+                    break;
+                }    
+                fprintf(stderr, "That's not a number!\n");
+                break;
+            }
+
+            if (!atoi(buffer[i+2]))
+            {
+                if(!strcmp(buffer[i+1], "0")) 
+                {
+                    fprintf(stderr, "You can't use 0 as an argument!\n");
+                    break;
+                }    
+                fprintf(stderr, "That's not a number!\n");
+                break;
+            }
+
+            cropImage(&imageFile, atoi(buffer[i+1]), atoi(buffer[i+2]));
+        }
+
+        if (!strcmp(buffer[i], "--crop-percent") || !strcmp(buffer[i], "-crp"))
         {
             if ((i+1) >= size) {
                 fprintf(stderr, "Maybe you missed new size argument\n");
@@ -78,11 +110,16 @@ void *interpreter(int size, const char **buffer) {
 
             if (!atoi(buffer[i+1]))
             {
+                if(!strcmp(buffer[i+1], "0")) 
+                {
+                    fprintf(stderr, "You can't use 0 as an argument!\n");
+                    break;
+                }    
                 fprintf(stderr, "That's not a number!\n");
                 break;
             }
 
-            resizeImage(&imageFile, atof(buffer[i+1]));
+            cropPercentImage(&imageFile, atoi(buffer[i+1]));
         }
     }
 

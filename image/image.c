@@ -43,7 +43,7 @@ void setImageData(image *imageFile) {
         imageFile->data = (void*)0;
     }
 
-    fread(imageFile->data, imageFile->size, sizeof(unsigned int), imageFile->source);
+    fread(imageFile->data, imageFile->size, sizeof(unsigned char), imageFile->source);
 }
 
 // Sets the image extension-type[number] and extenstion[text]

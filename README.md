@@ -17,6 +17,9 @@ Options:
 
     -cp, --copy                     Copy image
     -mv, --move                     Move image
+    -cr, --crop                     Crop image
+    -crp, --crop-percent            Crop image with percent
+
     -i, --info                      Shows information about image
 ```
 
@@ -39,7 +42,7 @@ Full path to the file:
 - Move/Rename :heavy_check_mark:
 - Properties (info) :heavy_check_mark:
 - Resize :x:
-- Crop  :x:
+- Crop  :heavy_check_mark:
 
 ## Building  
 
