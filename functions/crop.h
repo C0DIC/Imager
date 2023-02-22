@@ -9,6 +9,7 @@
 #include "../image/image.h"
 #include "../functions/copy.h"
 #include "../utils/correct_name.h"
+#include "../utils/imager_errors.h"
 #include <string.h>
 
 void cropImage(image *imageFile, unsigned int width, unsigned int height);
