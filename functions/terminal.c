@@ -25,6 +25,9 @@ const char *terminal_help_text =
     "                                   [copy_name (with extension) | full/path/where/to/save]\n\n"
     "   -mv, --move                     Move/rename image file\n"
     "                                   [new_name (with extension) | full/path/where/to/save]\n\n"
+    "   -cr, --crop                     Crop image\n"
+    "                                   new_width, new_height\n"
+    "   -crp, --crop-percent            Crop image by percent\n"
     "   -i, --info                      Shows information about image file\n";
 
 void terminal(int argc, const char *argv[], void *(interpreter)(int size, const char **buffer)) {

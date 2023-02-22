@@ -17,19 +17,51 @@ Options:
 
     -cp, --copy                     Copy image
     -mv, --move                     Move image
+    -cr, --crop                     Crop image (Only PNG)
+    -crp, --crop-percent            Crop image with percent (Only PNG)
+
     -i, --info                      Shows information about image
 ```
 
 ## Examples
 
-Only name (will save in the same directory, where program used):  
-`imager image.jpg --copy copy_image.jpg`
+### Copy images  
 
-Relative path:  
-`imager image.jpg -cp ~/copy_image.jpg`
+```text
+imager image.png --copy copy_image.png
+```
 
-Full path to the file:  
-`imager image.jpg --copy /home/username/copy_image.jpg`
+```text
+imager image.jpg -cp copy_image.jpg
+```
+
+```text
+imager image.jpeg -cp
+```
+
+### Move/rename images
+
+```text
+imager image.png -mv path/where/to/move
+```
+
+```text
+imager image.jpeg --move image_with_new_name.jpeg
+```
+
+### Crop images
+
+By width and height
+
+```text
+imager image.png -cr 640 380
+```
+
+By percent  
+
+```text
+imager image.png -crp 50%
+```
 
 ## Goals
 
@@ -39,7 +71,7 @@ Full path to the file:
 - Move/Rename :heavy_check_mark:
 - Properties (info) :heavy_check_mark:
 - Resize :x:
-- Crop  :x:
+- Crop  :heavy_check_mark:
 
 ## Building  
 
@@ -52,5 +84,5 @@ make
 ## Uninstall  
 
 ``` text
-make uninstall
+make clean
 ```

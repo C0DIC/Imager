@@ -46,23 +46,6 @@ void setImageData(image *imageFile) {
     fread(imageFile->data, imageFile->size, sizeof(unsigned char), imageFile->source);
 }
 
-// Sets (unsigned int)data of the image from source
-void setImageUData(image *imageFile)
-{
-    imageFile->u_data = (unsigned char*)malloc(imageFile->size);
-
-    if (!imageFile->data)
-    {
-        fprintf(stderr, "Read error!\n");
-        imageFile->u_data = (void*)0;
-    }
-
-    for (int i = 0; i < imageFile->size; i++)
-    {
-        imageFile->u_data[i] = (unsigned int)imageFile->data[i];
-    }
-}
-
 // Sets the image extension-type[number] and extenstion[text]
 void setImageExtension(image *imageFile) {
 
@@ -79,13 +62,13 @@ void setImageExtension(image *imageFile) {
 void getPngRes(image *imageFile, unsigned int *imageWidth, unsigned int *imageHeight) {
     for (int i = 16; i < 20; i++) {
         if (i != 19) {
-            *imageWidth += imageFile->u_data[i] << 8;
-        } else *imageWidth += imageFile->u_data[i];
+            *imageWidth += imageFile->data[i] << 8;
+        } else *imageWidth += imageFile->data[i];
     }
 
     for (int i = 20; i < 24; i++) {
-        if (i != 23) *imageHeight += imageFile->u_data[i] << 8;
-        else *imageHeight += imageFile->u_data[i]; 
+        if (i != 23) *imageHeight += imageFile->data[i] << 8;
+        else *imageHeight += imageFile->data[i]; 
     }
 }
 
@@ -126,7 +109,6 @@ image createImage(const char *filename) {
     new_image.height = 0;
     setImageSize(&new_image);
     setImageData(&new_image);
-    setImageUData(&new_image);
     setImageExtension(&new_image);
     setImageResolution(&new_image);
 
